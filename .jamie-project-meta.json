@@ -1,0 +1,20 @@
+{
+  "name": "state-shift-atlas",
+  "summary": "State Shift Atlas is a static Census data explorer for comparing how resident population changed across the 50 states, the District of Columbia, and Puerto Rico between the 2010 and 2020 Census, with sortable views for percent growth, numeric change, rank movement, and 2020 population.",
+  "category": "data-viz",
+  "tech_stack": [
+    "HTML",
+    "CSS",
+    "Vanilla JavaScript",
+    "Node.js"
+  ],
+  "test_commands": [
+    "npm test"
+  ],
+  "run_commands": [
+    "npm start"
+  ],
+  "github_repo": "jamiegonzalez929/state-shift-atlas",
+  "github_url": "https://github.com/jamiegonzalez929/state-shift-atlas",
+  "pages_url": "https://jamiegonzalez929.github.io/state-shift-atlas/"
+}
