@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State Shift Atlas</title>
+    <meta
+      name="description"
+      content="Explore how population changed across the 50 states, D.C., and Puerto Rico between the 2010 and 2020 Census."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Census explorer</p>
+        <h1>State Shift Atlas</h1>
+        <p class="lede">
+          A compact explorer for population change between the 2010 and 2020 Census. Compare
+          percent growth, absolute gains, and which states climbed or slipped in population rank.
+        </p>
+      </header>
+
+      <section class="panel" aria-labelledby="overview-heading">
+        <div class="section-heading">
+          <h2 id="overview-heading">At a glance</h2>
+          <p>Built from Census Table E and bundled for offline use.</p>
+        </div>
+        <div id="overview-cards" class="stat-grid"></div>
+      </section>
+
+      <section class="panel layout-grid" aria-labelledby="explorer-heading">
+        <div>
+          <div class="section-heading">
+            <h2 id="explorer-heading">Explorer</h2>
+            <p>Search an area, change the metric, and inspect the distribution.</p>
+          </div>
+
+          <div class="controls">
+            <label>
+              <span>Metric</span>
+              <select id="metric-select">
+                <option value="percentChange">Percent change</option>
+                <option value="numericChange">Numeric change</option>
+                <option value="rankShift">Population rank shift</option>
+                <option value="population2020">2020 population</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Search</span>
+              <input id="search-input" type="search" placeholder="State, district, or code" />
+            </label>
+
+            <label class="toggle">
+              <input id="territory-toggle" type="checkbox" checked />
+              <span>Include D.C. and Puerto Rico</span>
+            </label>
+          </div>
+
+          <div class="chart-shell">
+            <div class="chart-header">
+              <h3 id="chart-title">Percent change by area</h3>
+            </div>
+            <div id="chart-rows" class="chart-rows" role="list"></div>
+          </div>
+        </div>
+
+        <aside class="detail-stack">
+          <section class="detail-panel panel-inset" id="detail-panel" aria-live="polite"></section>
+          <section class="panel-inset">
+            <div class="section-heading">
+              <h3>Largest rank movements</h3>
+              <p>Population rank changes among states only.</p>
+            </div>
+            <ol id="rank-list" class="rank-list"></ol>
+          </section>
+        </aside>
+      </section>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
